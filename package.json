@@ -4,7 +4,7 @@
     "description": "electron + bash demo + typescript",
     "main": "./dist/main.js",
     "scripts": {
-        "build": "tsc && cp -R src/bash_src dist/.",
+        "build": "tsc && cp -R src/bash_src dist/. && cp src/*html dist/. && cp -R src/assets dist/.",
         "watch": "tsc -w",
         "lint": "tslint -c tslint.json -p tsconfig.json",
         "start": "npm run build && electron ./dist/main.js",

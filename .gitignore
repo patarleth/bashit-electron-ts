@@ -2,7 +2,7 @@ dist/*
 *asar
 node_modules/
 release-builds/
-assets/icons/png/*
-assets/icons/ico/*
-assets/icons/*icns
+src/assets/icons/png/*
+src/assets/icons/ico/*
+src/assets/icons/*icns
 package-lock.json
