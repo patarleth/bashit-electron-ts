@@ -2,7 +2,7 @@ import { execFile } from "child_process";
 import { app, BrowserWindow, ipcMain } from "electron";
 import * as path from "path";
 
-declare var global: any
+declare var global: any;
 declare var __dirname: any;
 
 let win: Electron.BrowserWindow;
@@ -15,7 +15,7 @@ function createWindow() {
     win.loadFile(path.join(__dirname, "../index.html"));
 
     // Open the DevTools.
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools();
 
     // Emitted when the window is closed.
     win.on("closed", () => {
