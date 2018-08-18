@@ -31,22 +31,36 @@ npm start
 ```
 
 ### package the app for distribution
+```
+    npm run package
+```
 
-#### package.sh
+#### notes -
+npm run package from package.json, first builds the app then executes package.sh, to add additional targets change package.sh.
 
-package.sh can use imagemagic (convert) and png2icns to create the icons from console_large.png. If neither app is installed script still works but the app will have electrons default icon set.
+package.sh can, if exists, use imagemagic (convert) and png2icns to create the icons from console_large.png. 
 
-If the icons exist, package.sh runs:
+If neither image app is installed the script still work - however the app will have the default electrons icon set.
+
+HOWEVER If you have installed imagemagick and png2icns the icons exist, package.sh runs:
 
 ```
 electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/icon.icns --prune=true --out=release-builds && \
 electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/icon_256.png --prune=true --out=release-builds
 ```
 
+and the app will be .... uh ... with the icons.
+
 ### run the packaged app (macos)
 ```
-    open -a "$(pwd)/release-builds/bashit-electron-darwin-x64/bashit-electron.app"
+    open -a "$(pwd)/release-builds/bashit-electron-ts-darwin-x64/bashit-electron-ts.app"
 ```
+
+### How to make a dmg from the the .app folder
+
+https://gist.github.com/jadeatucker/5382343
+
+yup....that
 
 ### extending the app by adding more bash functions
 
