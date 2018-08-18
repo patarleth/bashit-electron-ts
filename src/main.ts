@@ -28,7 +28,7 @@ function createWindow() {
 
 function bashit_fn(sender: any, fnName: string) {
     const executablePath = "/usr/bin/env";
-    const sourcePath = "source " + __dirname + "/../bash_src/lib.sh; " + fnName;
+    const sourcePath = "source " + __dirname + "/bash_src/lib.sh; " + fnName;
     const parameters = [ "bash", "-c", sourcePath ];
 
     execFile(executablePath, parameters, (err: any, data: any) => {
